@@ -25,7 +25,8 @@ B
     dt = (t_max - t_min) / steps
 
 Frequency domain
-    f_0 = 10 # Adjust this based on what frequencies you want to see
+    
+    f_0 = 10 
     f = np.linspace(-f_0, f_0, steps)
     df = (2 * f_0) / steps
 
@@ -36,22 +37,21 @@ Part A
 - Call function
 - Title graph
 - Return Graph
-.
 
-  def woods_saxon(t):
-      return 1 / (1 + np.exp((t - t_0)/ t_a))
-  def p(t):
-      return woods_saxon(t)
-  def graph_woods_saxon():
-      x_axis = np.linspace(xmin, xmax, plot_points)
-      y_axis = woods_saxon(x_axis)
-      plt.figure()
-      plt.plot(x_axis, y_axis, 'b-', linewidth=2)
-      plt.xlabel("Distance (fm)")
-      plt.ylabel("Energy (MeV)")
-      plt.title("Full Woods-Saxon Potential")
-      plt.grid(True, alpha=0.3)
-      plt.show()
+      def woods_saxon(t):
+          return 1 / (1 + np.exp((t - t_0)/ t_a))
+      def p(t):
+          return woods_saxon(t)
+      def graph_woods_saxon():
+          x_axis = np.linspace(xmin, xmax, plot_points)
+          y_axis = woods_saxon(x_axis)
+          plt.figure()
+          plt.plot(x_axis, y_axis, 'b-', linewidth=2)
+          plt.xlabel("Distance (fm)")
+          plt.ylabel("Energy (MeV)")
+          plt.title("Full Woods-Saxon Potential")
+          plt.grid(True, alpha=0.3)
+          plt.show()
 
 
 Part B
