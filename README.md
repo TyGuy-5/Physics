@@ -1,5 +1,3 @@
-# Recipie-Master
-Recipe App
 [attempt 2.py](https://github.com/user-attachments/files/23287324/attempt.2.py)
 '''set up and import libraries necessary to plot'''
 
@@ -26,7 +24,7 @@ t_max = 20
 t = np.linspace(t_min, t_max, steps)
 dt = (t_max - t_min) / steps
 
-# Frequency domain
+'''Frequency domain'''
 f_0 = 10 # Adjust this based on what frequencies you want to see
 f = np.linspace(-f_0, f_0, steps)
 df = (2 * f_0) / steps
@@ -92,29 +90,29 @@ def norm(frequencies):
 
 
 if __name__ == '__main__':
-    # Plot Part A: Woods-Saxon potential
+    ''' Plot Part A: Woods-Saxon potential'''
     graph_woods_saxon()
     
-    # Plot Part B: Fourier transform (vectorized computation)
+    '''Plot Part B: Fourier transform (vectorized computation)'''
     p_tilde_values = compute_fourier_transform(f)
     
     fig, (ax1, ax2, ax3, ax4) = plt.subplots(1, 4, figsize=(18, 5))
     
-    # Real part
+    '''Real part'''
     ax1.plot(f, np.real(p_tilde_values), linewidth=2)
     ax1.set_xlabel(r"Frequency $f$")
     ax1.set_ylabel(r"Real($\tilde{p}(f)$)")
     ax1.set_title("Fourier Transform (Real Part)")
     ax1.grid(True, alpha=0.3)
     
-    # Imaginary part
+    ''' Imaginary part'''
     ax2.plot(f, np.imag(p_tilde_values), linewidth=2)
     ax2.set_xlabel(r"Frequency $f$")
     ax2.set_ylabel(r"Imag($\tilde{p}(f)$)")
     ax2.set_title("Fourier Transform (Imaginary Part)")
     ax2.grid(True, alpha=0.3)
     
-    # Power spectrum
+    '''Power spectrum'''
     ax3.plot(f, power_spectrum(f), linewidth=2)
     ax3.set_xlabel(r"Frequency $f$")
     ax3.set_ylabel(r"$|\tilde{p}(f)|^2$")
