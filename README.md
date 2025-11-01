@@ -39,15 +39,10 @@ Part A
 
 
     def woods_saxon(t):
-        """
-        Calculate Woods-Saxon potential at position(s) x.
-        Formula: p(t) = 1/(1+e^{(t-t_0)/t_a})
-        """
         return 1 / (1 + np.exp((t - t_0)/ t_a))
     def p(t):
         return woods_saxon(t)
     def graph_woods_saxon():
-        """Plot the full Woods-Saxon potential."""
         x_axis = np.linspace(xmin, xmax, plot_points)
         y_axis = woods_saxon(x_axis)
         plt.figure()
