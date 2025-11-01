@@ -4,10 +4,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-'''
+
 GLOBAL VARIABLES
-'''
-'''A'''
+
+A
     t_0 = 4.1 #(s) seconds
     t_a = 0.6 #(s) seconds
     xmin = -20  # Femtometers (fm)
@@ -18,25 +18,25 @@ GLOBAL VARIABLES
     B = np.arange(0, steps, 1)
     b = np.arange(0, (-1*steps), -1)
 
-'''B'''
+B
     t_min = 0
     t_max = 20
     t = np.linspace(t_min, t_max, steps)
     dt = (t_max - t_min) / steps
 
-'''Frequency domain'''
+Frequency domain
     f_0 = 10 # Adjust this based on what frequencies you want to see
     f = np.linspace(-f_0, f_0, steps)
     df = (2 * f_0) / steps
 
 
-'''=Part A
+Part A
 - Define function
 - Define graph boundaries
 - Call function
 - Title graph
 - Return Graph
-'''
+
 
     def woods_saxon(t):
         """
@@ -58,12 +58,12 @@ GLOBAL VARIABLES
         plt.grid(True, alpha=0.3)
         plt.show()
 
-'''
+
 Part B
 ~p(f) = int(-infty -> infty)[p(t)e^{i2(pi)ft}dt]
 ~p(f) = int(-infty -> infty)[(1/(1+e^{(t-t_0)/t_a}))e^{i2(pi)ft}dt]
 = sum(-infty -> infty) [(1/(1+e^{(t-t_0)/t_a}))e^{i2(pi)ft}dt]
-'''
+
 
 
     def compute_fourier_transform(frequencies):
